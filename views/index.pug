@@ -1,0 +1,34 @@
+extends layout
+
+block content
+  .container(style={padding: '40px'})
+    h1= title
+    p Welcome to #{title}
+        h2 Enter your payment details
+        form
+          div.form-group
+            label(for='amount') Amount:
+            //- Set the attribute ID so event-handler.js knows where to grab the amount value.
+            input#amount.form-control(type='text', name='amount')
+          div.form-group
+            label(for='name') Name:
+            input.form-control(type='text', placeholder='first and last' name='name')
+          div.form-group
+            label(for='address1') Address:
+            input.form-control(type='text', placeholder='123 Main St' name='address1')
+          div.form-group
+            label(for='postal_code') ZIP:
+            input.form-control(type='text', placeholder='78750' name='postal_code')
+          div.form-group
+            label(for='number') Card number:
+            input.form-control(type='text', placeholder='4242424242424242' name='number')
+          div.form-group
+            label(for='cvv') CVV:
+            input.form-control(type='text', placeholder='123' name='cvv')
+          div.form-group
+            label(for='exp_month') Exp month:
+            input.form-control(type='text', placeholder='01' name='exp_month')
+          div.form-group
+            label(for='exp_year') Exp year:
+            input.form-control(type='text', placeholder='2020' name='exp_year')
+          button#pay.btn.btn-primary(type='submit') Submit
